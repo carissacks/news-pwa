@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <title>My First PWA</title>
+  <title>News Reader</title>
   <meta name="description" content="My first PWA"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/materialize.min.css">
@@ -14,7 +14,7 @@
   <!-- Navigasi -->
   <nav class="teal lighten-1" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">My App</a>
+      <a id="logo-container" href="#" class="brand-logo">News Reader</a>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger">&#9776;</a>
 
       <ul class="topnav right hide-on-med-and-down"></ul>
@@ -26,6 +26,7 @@
   <div class="body-content container"></div>
 
   <script src="js/materialize.min.js"></script>
+  <script src="js/api.js"></script>
   <script src="js/script.js"></script>
   <script>
   // REGISTER SERVICE WORKER
@@ -42,6 +43,11 @@
   } else {
     console.log("ServiceWorker belum didukung browser ini.")
   }
+
+  //request API
+  document.addEventListener("DOMContentLoaded", function(){
+    getArticles();
+  });
   </script>
 </body>
 </html>
